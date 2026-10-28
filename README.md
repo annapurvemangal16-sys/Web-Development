@@ -23,7 +23,7 @@ using HTML5.
 
 - index.html: Main website file
 - README.md: Project documentation
-- 
+- images/:Folder/profile.jpg 
 
 ## How to Run
 
