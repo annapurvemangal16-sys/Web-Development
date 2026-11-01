@@ -1,232 +1,349 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio website">
+    <title>My Portfolio | Web Developer</title>
 
-    <title>Mangal Annapurve | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111c35;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px #0004;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero h2 {
+            font-size: clamp(35px, 6vw, 55px);
+            margin-bottom: 15px;
+        }
+
+        .hero h2 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 600px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .skills-container,
+        .projects-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card,
+        .project-card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover,
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card h3,
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        .contact-content p {
+            margin: 12px 0;
+        }
+
+        .contact-content a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111c35;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
 
 <body>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <h1>Mangal Annapurve</h1>
-        <p>I am a BSc Computer Science Student | Aspiring Web Developer</p>
-        <a href="#about" class="btn">Explore My Portfolio</a>
+        <h1>MyPortfolio.</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#skills">My Skills</a>
-        <a href="#projects">My Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
     <!-- Home Section -->
-    <section id="home">
-        <h2>Welcome to My Portfolio</h2>
+    <section class="hero" id="home">
+        <h2>Hello, I'm <span>Mangal Annapurve </span></h2>
+        <h2>Web Development Intern</h2>
 
         <p>
-            Hello! Welcome to my personal portfolio website.
-            I am passionate about technology, programming,
-            and creating attractive websites.<br>
-            Explore my portfolio to learn more about me,
-            my technical skills, and my projects.
+            I am a passionate beginner in web development,
+            interested in creating beautiful, responsive
+            and user-friendly websites.
         </p>
+
+        <a href="#contact" class="btn">Contact Me</a>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2 class="section-title">About Me</h2>
 
-        <p>
-            Hello! My name is Mangal Annapurve.
-            I am a BSc Computer Science student who is
-            interested in web development and programming.
-        </p>
+        <div class="about-content">
+            <p>
+                Hello! I am a motivated and enthusiastic web
+                development student. I enjoy learning new
+                technologies and developing creative websites.
 
-        <p>
-            I enjoy learning new technologies and improving
-            my technical knowledge. I am currently focusing
-            on HTML and CSS to understand how websites are
-            created and designed.
-        </p>
-
-        <p>
-            I have started learning how to create web pages,
-            design layouts, add images, create hyperlinks,
-            build navigation menus, and style website
-            elements using HTML and CSS.
-        </p>
-
-        <p>
-            My goal is to become a skilled web developer
-            and build useful, creative, and user-friendly
-            websites. I believe that continuous learning,
-            practice, and hard work are important for
-            achieving success in the IT field.
-        </p>
-
-        <p>
-            I am eager to gain practical experience through
-            projects and internships. I want to improve my
-            coding skills, learn from experienced developers,
-            and apply my knowledge to real-world projects.
-        </p>
+                I have knowledge of HTML, CSS and JavaScript.
+                My goal is to improve my technical skills,
+                gain practical experience and become a
+                professional web developer.
+            </p>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2>My Technical Skills</h2>
+        <h2 class="section-title">My Skills</h2>
 
-        <div class="skill-container">
-
+        <div class="skills-container">
             <div class="skill-card">
-                <h3>HTML</h3>
-                <p>
-                    I use HTML to create the structure of web pages.
-                </p>
-
-                <ul>
-                    <li>Creating headings and paragraphs</li>
-                    <li>Adding images and hyperlinks</li>
-                    <li>Creating lists and tables</li>
-                    <li>Designing HTML forms</li>
-                    <li>Creating navigation menus</li>
-                    <li>Using semantic HTML elements</li>
-                </ul>
+                <h3>HTML5</h3>
+                <p>Creating structured web pages.</p>
             </div>
 
             <div class="skill-card">
-                <h3>CSS</h3>
-                <p>
-                    I use CSS to style web pages and improve
-                    their appearance.
-                </p>
-
-                <ul>
-                    <li>Changing colors and fonts</li>
-                    <li>Adding backgrounds</li>
-                    <li>Creating layouts</li>
-                    <li>Styling buttons and sections</li>
-                    <li>Using margins and padding</li>
-                </ul>
+                <h3>CSS3</h3>
+                <p>Designing attractive and responsive layouts.</p>
             </div>
 
             <div class="skill-card">
-                <h3>Programming</h3>
-                <p>
-                    I am developing my programming knowledge
-                    and problem-solving skills.
-                </p>
-
-                <ul>
-                    <li>Understanding basic programming concepts</li>
-                    <li>Learning programming logic</li>
-                    <li>Practicing simple programs</li>
-                    <li>Improving logical thinking</li>
-                </ul>
+                <h3>JavaScript</h3>
+                <p>Adding interactive website features.</p>
             </div>
 
+            <div class="skill-card">
+                <h3>Responsive Design</h3>
+                <p>Building websites for mobile and desktop.</p>
+            </div>
         </div>
     </section>
 
-         <!-- HTML Work Section -->
+    <!-- Projects Section -->
     <section id="projects">
-        <h2>My HTML Work</h2>
+        <h2 class="section-title">My Projects</h2>
 
-        <div class="project-card">
-            <h3>1. Basic HTML Web Page</h3>
+        <div class="projects-container">
 
-            <p>
-                Created a basic web page using HTML elements
-                such as headings, paragraphs, and links.
-            </p>
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A personal website to showcase my skills,
+                    education and projects.
+                </p>
+                <a href="#home" class="btn">View Project</a>
+            </div>
 
-            <h4>Example Code:</h4>
+            <div class="project-card">
+                <h3>Landing Page</h3>
+                <p>
+                    A modern and responsive landing page
+                    created using HTML and CSS.
+                </p>
+                <a href="#home" class="btn">View Project</a>
+            </div>
 
-            <pre><code>
-&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
-&lt;p&gt;This is my first web page.&lt;/p&gt;
-&lt;a href="https://www.google.com"&gt;
-Visit Google
-&lt;/a&gt;
-            </code></pre>
-        </div>
+            <div class="project-card">
+                <h3>Calculator</h3>
+                <p>
+                    A basic calculator application using
+                    HTML, CSS and JavaScript.
+                </p>
+                <a href="#home" class="btn">View Project</a>
+            </div>
 
-        <div class="project-card">
-            <h3>2. HTML Student Registration Form</h3>
-
-            <p>
-                Created a student registration form using
-                input fields, labels, and a submit button.
-            </p>
-
-            <h4>Example Code:</h4>
-
-            <pre><code>
-&lt;form&gt;
-    &lt;label&gt;Full Name:&lt;/label&gt;
-    &lt;input type="text" placeholder="Enter your name"&gt;
-
-    &lt;label&gt;Email:&lt;/label&gt;
-    &lt;input type="email" placeholder="Enter your email"&gt;
-
-    &lt;button type="submit"&gt;Register&lt;/button&gt;
-&lt;/form&gt;
-            </code></pre>
-        </div>
-
-        <div class="project-card">
-            <h3>3. Personal Portfolio Website</h3>
-
-            <p>
-                Developed this portfolio website using HTML
-                and CSS to display my introduction, skills,
-                and project information.
-            </p>
         </div>
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2 class="section-title">Contact Me</h2>
 
-        <p>
-            I welcome opportunities to learn, collaborate,
-            and improve my web development skills.
-        </p>
+        <div class="contact-content">
+            <p>Feel free to contact me for opportunities
+               and collaboration.</p>
 
-        <p>
-            Email:
-            <a href="mailto:mangal16@example.com">
-                mangal@example.com
-            </a>
-        </p>
+            <p>Email:
+                <a href="mailto:yourmail@example.com">
+                    yourmail@example.com
+                </a>
+            </p>
 
-        <p>
-            GitHub:
-            <a href="https://github.com/" target="_blank">
-                Visit GitHub
-            </a>
-        </p>
+            <p>LinkedIn:
+                <a href="https://www.linkedin.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    My LinkedIn Profile
+                </a>
+            </p>
+
+            <p>GitHub:
+                <a href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    My GitHub Profile
+                </a>
+            </p>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>
-            &copy; 2026 Mangal Annapurve.
+            &copy; <span id="year"></span> Your Name.
             All Rights Reserved.
         </p>
-
-        <p>Designed with HTML and CSS.</p>
     </footer>
+
+    <script>
+        // Automatically update copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Smooth navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log("Navigating to:", this.getAttribute("href"));
+            });
+        });
+    </script>
 
 </body>
 </html>
